@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/GoosvandenBekerom/go-sync/util"
 	"os"
 	"time"
 )
@@ -20,12 +21,8 @@ const (
 
 func main() {
 	start := time.Now()
-	f, err := os.Open(path)
+	total, err := util.GetFileSize(path)
 	check(err)
-	fi, err := f.Stat()
-	check(err)
-	total := fi.Size()
-	check(f.Close())
 
 	n := total / load
 	i := int64(0)
