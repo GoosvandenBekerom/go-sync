@@ -18,6 +18,7 @@ The main goroutine closes the channel while all bytes of the file have been read
  - close the channel
 
 To run this example: `$ go run cmd/single_channel/main.go`
+
 average runtime for reading `resources/large_file.txt` is between `170ms` and `200ms`
 
 ### Sync n goroutines by merging n channels
@@ -34,4 +35,5 @@ The main goroutine merges all n channels into a single one which it consumes and
  - keep receiving from the channel until it closes.
 
 To run this example: `$ go run cmd/merge_channels/main.go`
+
 average runtime for reading `resources/large_file.txt` is between `110ms` and `130ms`
