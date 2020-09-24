@@ -1,1 +1,3 @@
-module "github.com/GoosvandenBekerom/go-sync"
+module github.com/GoosvandenBekerom/go-sync
+
+go 1.15
