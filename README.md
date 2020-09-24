@@ -1,6 +1,6 @@
 # Synchronizing in Go
 
-In this repository are some experiments with syncing goroutines.
+This repository contains experiments/examples of syncing multiple goroutines.
 
 ## Examples
 
