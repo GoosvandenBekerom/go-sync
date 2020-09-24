@@ -1,4 +1,4 @@
-# Synchronizing in
+# Synchronizing in Go
 
 In this repository are some experiments with syncing goroutines.
 
