@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/GoosvandenBekerom/go-sync/util"
 	"os"
-	"time"
 )
 
 func check(e error) {
@@ -20,7 +19,10 @@ const (
 )
 
 func main() {
-	start := time.Now()
+	util.ExecuteMeasured(example, fmt.Sprintf("processed file %s", path))
+}
+
+func example() {
 	total, err := util.GetFileSize(path)
 	check(err)
 
@@ -42,8 +44,6 @@ func main() {
 		println(fmt.Sprintf("bytes received from channel: %s, total bytes read: %d", string(b), r))
 	}
 	close(c)
-	t := time.Now()
-	println(fmt.Sprintf("processed file %s in %d", path, t.Sub(start)))
 }
 
 func worker(id int, start, size int64, c chan<- []byte) {
